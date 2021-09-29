@@ -1,0 +1,9 @@
+#!ipxe
+set target-iqn iqn.2015-02.oracle.boot:uefi
+set root-path iscsi:169.254.0.2::::${target-iqn}
+set alt-root iscsi:169.254.0.2:::1:${target-iqn}
+set eversion 70
+sanhook ${root-path} || sanboot ||
+sanhook ${alt-root} || sanboot || set url http://10.0.2.175
+kernel ${url}/ipxe/${eversion}/mboot.efi -H -c ${url}/ipxe/${eversion}/boot.cfg
+boot

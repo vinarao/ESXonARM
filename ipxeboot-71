@@ -1,0 +1,12 @@
+#!ipxe
+set keep-san 1
+set target-iqn iqn.2015-02.oracle.boot:uefi
+set root-path iscsi:169.254.0.2::::${target-iqn}
+set root-path-lun1 iscsi:169.254.0.2:::1:${target-iqn}
+sanhook ${root-path} || sanhook ${root-path-lun1} || echo could not attach ${root-path}
+set eversion <ESXi version>
+sanhook ${root-path} || sanboot ||
+sanhook ${alt-root} || sanboot || set url http://<iPXE instance private IP>
+# Set your kernel and initrd here...
+kernel ${url}/ipxe/${eversion}/mboot.efi -c ${url}/ipxe/${eversion}/boot.cfg
+initrd
