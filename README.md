@@ -1,13 +1,9 @@
-<p align="center"> ### Deploying 3-Tier Application on OCI</p>
+<p align="center"> ### ESX ON ARM/p>
 
-This is a terraform template to deploy a Higly available 3Tier Application on OCI. 
-Front-end Tier is a OCI public loadbalancer 
-App-Tier is a Python Flask Application 
-Back-end Tier is based on Oracle DBaaS service
+This is a terraform template to deploy a iPXE sever on OCI. 
 
-##### 3 Tier Architecture #######
 
-![Alt text](https://bitbucket.aka.lgl.grungy.us/users/vinayrao/repos/terraform-script/browse/3_tier_web_app_oracle/.idea/3TierDB.png?raw=true "3 Tier Architecture")
+##### iPXE on OCI #######
 
 
 
